@@ -192,14 +192,13 @@ export const HomeRoute = () => {
         </div>
       </Container>
 
-      <Container>
+      {/* <Container>
         <div className="mt-12 mb-4">
           <h1 className="font-bold text-xl text-center">Explorá perfiles</h1>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <a href={`/waitlist?ref=home`} className="w-full h-full" tabIndex={-1}>
             <Card className="flex flex-col justify-center items-center w-full h-full p-8 bg-primary/10 border-primary/35 border-dotted">
-              {/* Info */}
               <p className="text-sm text-center">Se uno de los primeros en enterarte.</p>
 
               <div className="mt-2">
@@ -219,16 +218,13 @@ export const HomeRoute = () => {
                       </AvatarFallback>
                     </Avatar>
 
-                    {/* Info */}
                     <div className="flex flex-col items-center gap-0 px-4">
-                      {/* Name */}
                       {profile?.name ? (
                         <h2 className="font-bold">{profile?.name}</h2>
                       ) : (
                         <Skeleton className="w-[80px] h-[15px] my-1 bg-background rounded-full" />
                       )}
 
-                      {/* Lud16 */}
                       {profile?.lud16 ? (
                         <p className="truncate overflow-hidden w-full lg:max-w-[200px] whitespace-nowrap text-sm">
                           {profile?.lud16}
@@ -248,7 +244,7 @@ export const HomeRoute = () => {
               );
             })}
         </div>
-      </Container>
+      </Container> */}
     </ContentLayout>
   );
 };
