@@ -13,11 +13,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        // General
+        text: 'hsl(var(--text))',
         border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        background: 'hsl(var(--background))',
+        // input: 'hsl(var(--input))',
+        // ring: 'hsl(var(--ring))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -26,14 +28,18 @@ module.exports = {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
+        // destructive: {
+        //   DEFAULT: 'hsl(var(--destructive))',
+        //   foreground: 'hsl(var(--destructive-foreground))',
+        // },
+        // muted: {
+        //   DEFAULT: 'hsl(var(--muted))',
+        //   foreground: 'hsl(var(--muted-foreground))',
+        // },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',

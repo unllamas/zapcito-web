@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Zapcito",
+  "short_name": "zapcito",
   "description": "",
   "start_url": "/",
   "display": "standalone",
@@ -8,7 +8,7 @@
   "theme_color": "#000",
   "icons": [
     {
-      "src": "",
+      "src": "/",
       "sizes": "1000x1000",
       "type": "image/png"
     }
