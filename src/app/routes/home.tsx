@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { nip19 } from '@lawallet/nostr-tools';
 import { splitHandle } from '@lawallet/utils';
-
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from 'sonner';
+
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+// import { Card } from '@/components/ui/card';
+// import { Skeleton } from '@/components/ui/skeleton';
+// import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 import { Container } from '@/features/layouts/container';
 import { ContentLayout } from '@/components/layout/content-layout';
@@ -18,51 +18,51 @@ import { ContentLayout } from '@/components/layout/content-layout';
 // import { createSearch } from './actions';
 
 // Mock
-const PROFILES = [
-  {
-    id: 'cee287bb0990a8ecbd1dee7ee7f938200908a5c8aa804b3bdeaed88effb55547',
-    picture: 'https://m.primal.net/HWWM.png',
-    name: 'Jona |🇦🇷',
-    lud16: 'dios@lawallet.ar',
-  },
-  {
-    id: '3748b5a01edca05ae9f7dd434679eb768193aa27262024ae89add65cdccc1965',
-    picture: 'https://i.imgur.com/YQyX3Lo.png',
-    name: 'Fer',
-    lud16: 'fer@hodl.ar',
-  },
-  {
-    id: '2ad91f1dca2dcd5fc89e7208d1e5059f0bac0870d63fc3bac21c7a9388fa18fd',
-    picture: 'https://m.primal.net/HcNC.gif',
-    name: 'Agustin Kassis',
-    lud16: 'agustin@lawallet.ar',
-  },
-  {
-    id: 'b632a9073e8337a228969f46badaac6eb0035d4a4e08fd37c82355d263559a11',
-    picture:
-      'https://image.nostr.build/8d71027dca097a196ae17935139415d3f6040a2ce83d3e7d5b1891164966221b.jpg',
-    name: 'Jota',
-    lud16: 'juan@lawallet.ar',
-  },
-  {
-    id: '10fe7e324ad92e91a2c915934b9a349fc21d15d19d638ab61ed15bf65cd9b9df',
-    picture:
-      'https://image.nostr.build/24a76de6e7f2082c831d836f1e943be4209e13ba3be6dc59f668bc33389be437.gif',
-    name: 'Rapax',
-    lud16: 'rapax@lawallet.ar',
-  },
-];
+// const PROFILES = [
+//   {
+//     id: 'cee287bb0990a8ecbd1dee7ee7f938200908a5c8aa804b3bdeaed88effb55547',
+//     picture: 'https://m.primal.net/HWWM.png',
+//     name: 'Jona |🇦🇷',
+//     lud16: 'dios@lawallet.ar',
+//   },
+//   {
+//     id: '3748b5a01edca05ae9f7dd434679eb768193aa27262024ae89add65cdccc1965',
+//     picture: 'https://i.imgur.com/YQyX3Lo.png',
+//     name: 'Fer',
+//     lud16: 'fer@hodl.ar',
+//   },
+//   {
+//     id: '2ad91f1dca2dcd5fc89e7208d1e5059f0bac0870d63fc3bac21c7a9388fa18fd',
+//     picture: 'https://m.primal.net/HcNC.gif',
+//     name: 'Agustin Kassis',
+//     lud16: 'agustin@lawallet.ar',
+//   },
+//   {
+//     id: 'b632a9073e8337a228969f46badaac6eb0035d4a4e08fd37c82355d263559a11',
+//     picture:
+//       'https://image.nostr.build/8d71027dca097a196ae17935139415d3f6040a2ce83d3e7d5b1891164966221b.jpg',
+//     name: 'Jota',
+//     lud16: 'juan@lawallet.ar',
+//   },
+//   {
+//     id: '10fe7e324ad92e91a2c915934b9a349fc21d15d19d638ab61ed15bf65cd9b9df',
+//     picture:
+//       'https://image.nostr.build/24a76de6e7f2082c831d836f1e943be4209e13ba3be6dc59f668bc33389be437.gif',
+//     name: 'Rapax',
+//     lud16: 'rapax@lawallet.ar',
+//   },
+// ];
 
 // Función para mezclar (randomizar) un array
-const shuffleArray = (array: any[]) => {
-  return array
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-};
+// const shuffleArray = (array: any[]) => {
+//   return array
+//     .map((value) => ({ value, sort: Math.random() }))
+//     .sort((a, b) => a.sort - b.sort)
+//     .map(({ value }) => value);
+// };
 
 // Mezclar el array PROFILES
-const shuffledProfiles = shuffleArray(PROFILES);
+// const shuffledProfiles = shuffleArray(PROFILES);
 
 export const HomeRoute = () => {
   const navigate = useNavigate();
