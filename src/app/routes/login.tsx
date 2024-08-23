@@ -3,7 +3,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useLogin, useActiveUser } from 'nostr-hooks';
 
-import { ContentLayout } from '@/components/layout/content-layout';
+import { MainLayout } from '@/components/layouts/main-layout';
 
 // import { Label } from '@/components/ui/label';
 // import { Input } from '@/components/ui/input';
@@ -33,7 +33,7 @@ export const LoginRoot = () => {
   if (activeUser?.pubkey) navigate('/');
 
   return (
-    <ContentLayout title="Ingresar">
+    <MainLayout title="Ingresar">
       <div className="flex h-screen w-full bg-background">
         <div className="container mx-auto flex max-w-md flex-col items-center gap-4 px-4">
           <img src="/lock.png" alt="Lock icon by Yassine Design" width={200} height={200} />
@@ -120,6 +120,6 @@ export const LoginRoot = () => {
           </Tabs>
         </div>
       </div>
-    </ContentLayout>
+    </MainLayout>
   );
 };

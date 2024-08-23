@@ -32,7 +32,8 @@ import { timeAgo, convertToHex, extractDomain, normalizeUrl } from '@/lib/utils'
 
 import { useProfile, useSubscribe } from 'nostr-hooks';
 import { RELAYS } from '@/config/config';
-import { ContentLayout } from '@/components/layout/content-layout';
+
+import { MainLayout } from '@/components/layouts/main-layout';
 
 export const ProfileRoot = () => {
   const { pubkey } = useParams();
@@ -137,7 +138,7 @@ export const ProfileRoot = () => {
   }, [invoice.payed]);
 
   return (
-    <ContentLayout title={profile?.displayName || 'Perfil'}>
+    <MainLayout title={profile?.displayName || 'Perfil'}>
       <div className="">
         {profile?.banner ? (
           <img
@@ -219,7 +220,7 @@ export const ProfileRoot = () => {
                     tabIndex={-1}
                     rel="nofollow"
                   >
-                    <Button size="sm" variant="link" className="text-left p-0 gap-2">
+                    <Button variant="link" className="text-left p-0 gap-2">
                       <LinkIcon className="w-4 h-4" />
                       <span className="truncate overflow-hidden w-full lg:max-w-[200px] whitespace-nowrap">
                         {extractDomain(profile?.website)}
@@ -611,7 +612,7 @@ export const ProfileRoot = () => {
           </div>
         </div>
       </Container>
-    </ContentLayout>
+    </MainLayout>
   );
 };
 
@@ -651,16 +652,16 @@ function LinkIcon(props: any) {
       <path
         d="M11.0991 3.00012C7.45013 3.00669 5.53932 3.09629 4.31817 4.31764C3.00034 5.63568 3.00034 7.75704 3.00034 11.9997C3.00034 16.2424 3.00034 18.3638 4.31817 19.6818C5.63599 20.9999 7.75701 20.9999 11.9991 20.9999C16.241 20.9999 18.3621 20.9999 19.6799 19.6818C20.901 18.4605 20.9906 16.5493 20.9972 12.8998"
         stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M20.556 3.49612L11.0487 13.0586M20.556 3.49612C20.062 3.00151 16.7343 3.04761 16.0308 3.05762M20.556 3.49612C21.05 3.99074 21.0039 7.32273 20.9939 8.02714"
         stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -680,16 +681,16 @@ function CopyIcon(props: any) {
       <path
         d="M9 15C9 12.1716 9 10.7574 9.87868 9.87868C10.7574 9 12.1716 9 15 9L16 9C18.8284 9 20.2426 9 21.1213 9.87868C22 10.7574 22 12.1716 22 15V16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H15C12.1716 22 10.7574 22 9.87868 21.1213C9 20.2426 9 18.8284 9 16L9 15Z"
         stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.9999 9C16.9975 6.04291 16.9528 4.51121 16.092 3.46243C15.9258 3.25989 15.7401 3.07418 15.5376 2.90796C14.4312 2 12.7875 2 9.5 2C6.21252 2 4.56878 2 3.46243 2.90796C3.25989 3.07417 3.07418 3.25989 2.90796 3.46243C2 4.56878 2 6.21252 2 9.5C2 12.7875 2 14.4312 2.90796 15.5376C3.07417 15.7401 3.25989 15.9258 3.46243 16.092C4.51121 16.9528 6.04291 16.9975 9 16.9999"
         stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -709,16 +710,16 @@ function CopyIcon(props: any) {
 //       <path
 //         d="M3.89089 20.8727L3 21L3.12727 20.1091C3.32086 18.754 3.41765 18.0764 3.71832 17.4751C4.01899 16.8738 4.50296 16.3898 5.47091 15.4218L16.9827 3.91009C17.4062 3.48654 17.618 3.27476 17.8464 3.16155C18.2811 2.94615 18.7914 2.94615 19.2261 3.16155C19.4546 3.27476 19.6663 3.48654 20.0899 3.91009C20.5135 4.33365 20.7252 4.54543 20.8385 4.77389C21.0539 5.20856 21.0539 5.71889 20.8385 6.15356C20.7252 6.38201 20.5135 6.59379 20.0899 7.01735L8.57816 18.5291C7.61022 19.497 7.12625 19.981 6.52491 20.2817C5.92357 20.5823 5.246 20.6791 3.89089 20.8727Z"
 //         stroke="currentColor"
-//         stroke-width="1.5"
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
+//         strokeWidth="1.5"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
 //       />
 //       <path
 //         d="M6 15L9 18M8.5 12.5L11.5 15.5"
 //         stroke="currentColor"
-//         stroke-width="1.5"
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
+//         strokeWidth="1.5"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
 //       />
 //     </svg>
 //   );
