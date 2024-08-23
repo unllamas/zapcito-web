@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { QueryClient, useQueryClient } from '@tanstack/react-query';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { useAutoLogin } from 'nostr-hooks';
 
 export const createAppRouter = (_queryClient: QueryClient) =>
   createBrowserRouter([
@@ -39,8 +38,6 @@ export const AppRouter = () => {
   const queryClient = useQueryClient();
 
   const router = useMemo(() => createAppRouter(queryClient), [queryClient]);
-
-  useAutoLogin();
 
   return <RouterProvider router={router} />;
 };

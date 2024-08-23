@@ -1,5 +1,5 @@
 import { LaWalletConfig } from '@lawallet/react';
-import { useNdk, useNostrHooks } from 'nostr-hooks';
+import { useAutoLogin, useNostrHooks } from 'nostr-hooks';
 
 import { ThemeProvider } from '@/components/theme';
 
@@ -8,14 +8,21 @@ import { AppRouter } from './router';
 
 import { config, RELAYS } from '@/config/config';
 import NDK from '@nostr-dev-kit/ndk';
-
-const newNdk = new NDK({ explicitRelayUrls: RELAYS });
+import { useMemo } from 'react';
 
 export const App = () => {
-  useNostrHooks();
+  const ndk = useMemo(
+    () =>
+      new NDK({
+        explicitRelayUrls: RELAYS,
+        autoConnectUserRelays: false,
+        autoFetchUserMutelist: false,
+      }),
+    [],
+  );
 
-  const { setNdk } = useNdk();
-  setNdk(newNdk); // this will replace the existing NDK instance with the new one
+  useNostrHooks(ndk);
+  useAutoLogin();
 
   return (
     <LaWalletConfig config={config}>
